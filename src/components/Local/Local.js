@@ -39,6 +39,7 @@ function Local() {
     const loadNews = async () => {
       const response = await axios.get(APIs[newsoption[e || 0].num]);
       setNews(response.data.articles);
+      console.log(response);
     };
     loadNews();
   }
@@ -73,6 +74,8 @@ function Local() {
         </div>
       </div>
       <h1 className="Heading">{newsoption[selects || 0].cat}</h1>
+
+
       <div className="Newscards">
         {news &&
           news.map((item, index) => {
